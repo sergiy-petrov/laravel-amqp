@@ -5,7 +5,7 @@ namespace Bschmitt\Amqp\Tests;
 use \Mockery;
 use Illuminate\Config\Repository;
 
-class BaseTestCase extends \PHPUnit_Framework_TestCase
+abstract class BaseTestCase extends \PHPUnit_Framework_TestCase
 {
 
     const REPOSITORY_KEY = 'amqp';
