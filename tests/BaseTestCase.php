@@ -4,8 +4,9 @@ namespace Bschmitt\Amqp\Tests;
 
 use \Mockery;
 use Illuminate\Config\Repository;
+use PHPUnit\Framework\TestCase;
 
-abstract class BaseTestCase extends \PHPUnit_Framework_TestCase
+abstract class BaseTestCase extends TestCase
 {
 
     const REPOSITORY_KEY = 'amqp';
@@ -13,7 +14,7 @@ abstract class BaseTestCase extends \PHPUnit_Framework_TestCase
     protected $configRepository;
     protected $defaultConfig;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $amqpConfig = include dirname(__FILE__).'/../config/amqp.php';
         $this->defaultConfig = $amqpConfig['properties'][$amqpConfig['use']];
@@ -25,7 +26,7 @@ abstract class BaseTestCase extends \PHPUnit_Framework_TestCase
     }
 
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         // necessary for Mockery to check if methods were called and with what arguments
         Mockery::close();
