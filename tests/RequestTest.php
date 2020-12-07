@@ -1,6 +1,6 @@
 <?php
 
-namespace Bschmitt\Amqp\Test;
+namespace Bschmitt\Amqp\Tests;
 
 use \Mockery;
 use Bschmitt\Amqp\Request;

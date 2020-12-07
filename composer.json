@@ -41,7 +41,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Bschmitt\\Amqp\\Test\\": "test/"
+      "Bschmitt\\Amqp\\Tests\\": "tests/"
     }
   },
   "extra": {
