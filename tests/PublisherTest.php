@@ -3,17 +3,25 @@
 namespace Bschmitt\Amqp\Tests;
 
 use \Mockery;
-use Bschmitt\Amqp\Publisher;
-use Illuminate\Config\Repository;
 
 /**
  * @author Björn Schmitt <code@bjoern.io>
  */
 class PublisherTest extends BaseTestCase
 {
-
+    /**
+     * @var \Bschmitt\Amqp\Publisher
+     */
     private $publisherMock;
+
+    /**
+     * @var \PhpAmqpLib\Connection\AMQPSSLConnection
+     */
     private $connectionMock;
+
+    /**
+     * @var \PhpAmqpLib\Channel\AMQPChannel
+     */
     private $channelMock;
 
     protected function setUp(): void

@@ -19,7 +19,7 @@ abstract class BaseTestCase extends TestCase
         $amqpConfig = include dirname(__FILE__).'/../config/amqp.php';
         $this->defaultConfig = $amqpConfig['properties'][$amqpConfig['use']];
 
-        $config = Mockery::mock('\Illuminate\Config\Repository');
+        $config = Mockery::mock('\Illuminate\Contracts\Config\Repository');
         $config->shouldReceive('has')->with(self::REPOSITORY_KEY)->andReturn(true);
         $config->shouldReceive('get')->with(self::REPOSITORY_KEY)->andReturn($amqpConfig);
         $this->configRepository = $config;

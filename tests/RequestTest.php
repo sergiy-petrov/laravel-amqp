@@ -31,12 +31,10 @@ class RequestTest extends BaseTestCase
 
     }
 
-    /**
-     * @expectedException Bschmitt\Amqp\Exception\Configuration
-     */
     public function testIfEmptyExchangeThrowsAnException()
     {
 
+        $this->expectException(\Bschmitt\Amqp\Exception\Configuration::class);
         $this->requestMock->mergeProperties(['exchange' => '']);
         $this->requestMock->shouldReceive('connect');
 
